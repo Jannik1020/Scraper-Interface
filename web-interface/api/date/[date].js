@@ -1,6 +1,6 @@
 export default function handler(request, response) {
 
-    config = require("../_utils")
+    var config = require("../_utils")
 
     console.log("Hallo")
     console.log(config)
