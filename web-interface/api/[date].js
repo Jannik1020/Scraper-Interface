@@ -1,5 +1,6 @@
 export default (request, response) => {
 
+    console.log("Hallo")
     console.log(require("./_utils.js").config())
 
     var Pool = require('pg-pool');
