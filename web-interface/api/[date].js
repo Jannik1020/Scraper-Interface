@@ -1,6 +1,8 @@
 export default (request, response) => {
-    const Pool = require('pg-pool');
+
     console.log(require("./_utils.js").config())
+
+    var Pool = require('pg-pool');
     const pool = new Pool(require("./_utils.js").config());
 
     var date = request.query.date
