@@ -1,4 +1,4 @@
-export default (request, response) => {
+export default function handler(request, response) {
 
     console.log("Hallo")
     console.log(require("../_utils.js").config())
