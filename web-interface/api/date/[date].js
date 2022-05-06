@@ -1,8 +1,9 @@
 export default function handler(request, response) {
 
+    config = require("../_utils")
 
     console.log("Hallo")
-    console.log(require("../_utils.js")())
+    console.log(config)
 
    /* var Pool = require('pg-pool');
     const pool = new Pool(require("../_utils.js").config());
