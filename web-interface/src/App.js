@@ -1,7 +1,7 @@
 
 import './App.css';
 
-function App() {
+async function App() {
   const data = await fetch("../../../api/date?date=2022_05_06", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
