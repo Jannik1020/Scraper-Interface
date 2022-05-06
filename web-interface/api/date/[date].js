@@ -1,4 +1,4 @@
-export default function handler(request, response) {
+export default (request, response) => {
     const Pool = require('pg-pool');
     const pool = new Pool(require("../_utils.js").config());
 
