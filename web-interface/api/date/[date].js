@@ -1,6 +1,7 @@
 export default function handler(request, response) {
 
-    console.log("Hallo")
+
+   /* console.log("Hallo")
     console.log(require("../_utils.js").config())
 
     var Pool = require('pg-pool');
@@ -13,5 +14,5 @@ export default function handler(request, response) {
     response.status(200).json({
         body: detail_table,
         query: request.query,
-    })
+    })*/
 };
