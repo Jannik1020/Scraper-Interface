@@ -11,12 +11,12 @@ export default function handler(request, response) {
         connectionString
     });
 
-    /*var date = request.query.date
+    var date = request.query.date
     console.log(date)
     var detail_table = await pool.query('SELECT * from big_table.d' + date) 
 
     response.status(200).json({
         body: detail_table,
         query: request.query,
-    })*/
+    })
 };
