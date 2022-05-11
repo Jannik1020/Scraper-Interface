@@ -3,7 +3,6 @@
 export default function handler(request, response) {
 
     console.log("Hallo")
-    console.log(config())
 
     const connectionString = process.env.DB_URL
 
