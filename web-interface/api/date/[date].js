@@ -1,6 +1,6 @@
 
 
-module.exports = (request, response) => {
+module.exports = async (request, response) => {
 
     console.log("Hallo")
 
