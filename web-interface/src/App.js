@@ -3,7 +3,7 @@ import './App.css';
 
 async function App() {
   const date = new Date();
-  const dateString = date.toISOString().split('T')[0].replace("_", "-")
+  const dateString = date.toISOString().split('T')[0].replace("-", "_")
   const data = await fetch("../../../api/date/date=" + dateString, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
