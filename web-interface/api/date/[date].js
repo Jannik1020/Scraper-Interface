@@ -5,7 +5,7 @@ module.exports = async (request, response) => {
     console.log("Hallo")
 
     const connectionString = process.env.DB_URL
-    consolge.log(connectionString)
+    console.log(connectionString)
     var Pool = require('pg-pool');
     const pool = new Pool({
         connectionString
