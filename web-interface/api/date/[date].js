@@ -1,6 +1,6 @@
 
 
-export default function handler(request, response) {
+module.exports = (request, response) => {
 
     console.log("Hallo")
 
@@ -15,8 +15,8 @@ export default function handler(request, response) {
     console.log(date)
     var detail_table = await pool.query('SELECT * from big_table.d' + date) 
 
-    /*response.status(200).json({
+    response.status(200).json({
         body: detail_table,
         query: request.query,
-    })*/
+    })
 };
