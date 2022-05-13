@@ -17,7 +17,7 @@ module.exports = async (request, response) => {
     console.log(date)
     var detail_table = await pool.query('SELECT * from big_table.d' + date)
     response.status(200).json({
-        body: detail_table["rows"][0],
+        body: detail_table["rows"],
         query: request.query,
     })
 };
