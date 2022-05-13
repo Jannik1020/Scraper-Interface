@@ -2,7 +2,9 @@
 import './App.css';
 
 async function App() {
-  const data = await fetch("../../../api/date?date=2022_05_06", {
+  const date = new Date();
+  const dateString = date.toISOString().split('T')[0].replace("_", "-")
+  const data = await fetch("../../../api/date/date=" + dateString, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   })
@@ -14,7 +16,7 @@ async function App() {
   console.log(data.body)
   return (
     <div className="App">
-      
+      {data}
     </div>
   );
 }
