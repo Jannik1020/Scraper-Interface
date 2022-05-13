@@ -5,10 +5,12 @@ module.exports = async (request, response) => {
     console.log("Hallo")
 
     const connectionString = process.env.DB_URL
-    console.log(connectionString)
     var Pool = require('pg-pool');
     const pool = new Pool({
-        connectionString
+        connectionString,
+        ssl: {
+            rejectUnauthorized: false,
+        }
     });
 
     var date = request.query.date
