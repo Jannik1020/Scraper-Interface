@@ -8,9 +8,9 @@ module.exports = async (request, response) => {
         }
     });
 
-    var all_tables = await pool.query("select * from information_schema.tables where table_schema='big_table' order by table_name ASC")
+    var all_tables = await pool.query("select table_name from information_schema.tables where table_schema='big_table' order by table_name ASC")
     response.status(200).json({
-        body: all_tables,
+        body: all_tables["rows"],
         query: request.query,
     })
 };
