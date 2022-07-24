@@ -32,7 +32,7 @@ function App(props) {
         id="start"
         name="trip-start"
         min={props.min.substring(1).replace(/_/g, "-")}
-        max={props.max.substring(1).replace("_", /-/g)}
+        max={props.max.substring(1).replace(/_/g, "-")}
       ></input>
       <button>
         Bestätigen
