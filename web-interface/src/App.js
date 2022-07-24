@@ -1,7 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
 
-
 function App(props) {
   useEffect(() => {
     async function getDate() {
@@ -23,20 +22,25 @@ function App(props) {
     }
     getDate();
   }, []);
-  console.log(props.min.substring(1).replace(/_/g, "-"))
+
+  function handleConfirm(e) {
+    e.preventDefault();
+
+    var chosenDate = document.getElementById("dPicker").value
+    console.log(chosenDate)
+  }
+
+  console.log(props.min.substring(1).replace(/_/g, "-"));
   return (
-    
     <div className="App">
       <input
         type="date"
-        id="start"
-        name="trip-start"
+        id="dPicker"
         min={props.min.substring(1).replace(/_/g, "-")}
         max={props.max.substring(1).replace(/_/g, "-")}
+        value={props.max.substring(1).replace(/_/g, "-")}
       ></input>
-      <button>
-        Bestätigen
-      </button>
+      <button onClick={handleConfirm}>Bestätigen</button>
     </div>
   );
 }
