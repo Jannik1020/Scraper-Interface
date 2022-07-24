@@ -1,13 +1,17 @@
 import "./App.css";
-import { useEffect } from "react";
 
 function App(props) {
-  useEffect(() => {
+
+  function handleConfirm(e) {
+    e.preventDefault();
+
+    var chosenDate = document.getElementById("dPicker").value
+    console.log(chosenDate)
+
     async function getDate() {
-      const date = new Date();
-      const dateString = date.toISOString().split("T")[0].replace(/-/g, "_");
+      const date = chosenDate.replace(/-/g, "_");
       const data = await fetch(
-        "https://scraper-interface.vercel.app/api/date/" + dateString,
+        "https://scraper-interface.vercel.app/api/" + date,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
@@ -20,14 +24,9 @@ function App(props) {
         });
       console.log(data.body);
     }
-    getDate();
-  }, []);
-
-  function handleConfirm(e) {
-    e.preventDefault();
-
-    var chosenDate = document.getElementById("dPicker").value
-    console.log(chosenDate)
+    
+    getDate()
+     
   }
 
   console.log(props.min.substring(1).replace(/_/g, "-"));
@@ -38,7 +37,6 @@ function App(props) {
         id="dPicker"
         min={props.min.substring(1).replace(/_/g, "-")}
         max={props.max.substring(1).replace(/_/g, "-")}
-        value={props.max.substring(1).replace(/_/g, "-")}
       ></input>
       <button onClick={handleConfirm}>Bestätigen</button>
     </div>
