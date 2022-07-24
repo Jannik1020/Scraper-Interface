@@ -11,7 +11,7 @@ function App(props) {
     async function getDate() {
       const date = chosenDate.replace(/-/g, "_");
       const data = await fetch(
-        "https://scraper-interface.vercel.app/api/" + date,
+        "https://scraper-interface.vercel.app/api/date/" + date,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
